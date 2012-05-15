@@ -16,8 +16,7 @@ public class App {
         
         logger.warn("warn message");
         
+        // if you want this to pass change appender to Email instead of ASYNC_EMAIL in root logger
         logger.error("error message, a very long error message!");
-        
-        Thread.sleep(2000);
     }
 }

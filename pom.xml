@@ -22,12 +22,7 @@
             <artifactId>mail</artifactId>
             <version>1.4</version>
         </dependency>
-        <!-- Apache Commons Validator -->
-        <dependency>
-            <groupId>commons-validator</groupId>
-            <artifactId>commons-validator</artifactId>
-            <version>1.4.0</version>
-        </dependency>
+        
 
         <!-- Log4j -->
         <dependency>

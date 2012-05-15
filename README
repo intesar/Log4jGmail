@@ -74,7 +74,7 @@ Step 2: Sample logging file, inline comments are self explanatory
 
         <root>
             <priority value="trace" />
-            <appender-ref ref="Email" />
+            <appender-ref ref="EMAIL_ASYNC" />
             <appender-ref ref="Console" />
         </root>
 
@@ -94,9 +94,9 @@ Sample Code
             logger.trace("trace message");
 
             logger.warn("warn message");
-
+            
+            // if you want this to pass change appender to Email instead of ASYNC_EMAIL in root logger
             logger.error("error message, a very long error message!");
 
-            Thread.sleep(2000);
         }
     }

@@ -30,7 +30,7 @@
     
     <root>
         <priority value="trace" />
-        <appender-ref ref="Email" />
+        <appender-ref ref="EMAIL_ASYNC" />
         <appender-ref ref="Console" />
     </root>
     
