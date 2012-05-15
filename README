@@ -38,6 +38,7 @@ Step 1: Add dependencies
 
 
 Step 2: Sample logging file, inline comments are self explanatory
+        file linke : https://github.com/intesar/Log4jGmail/blob/master/src/main/resources/log4j.xml
 
     <?xml version="1.0" encoding="UTF-8" ?>
     <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
@@ -84,10 +85,6 @@ Sample Code
 
     import org.apache.log4j.Logger;
 
-    /**
-    * Hello world!
-    *
-    */
     public class App {
 
         private static Logger logger = Logger.getLogger(App.class);
