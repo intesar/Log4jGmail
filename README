@@ -1,4 +1,7 @@
-Follow these simple steps to configure Log4j to use GMail
+Receive all server exceptions as email, never miss one, easy to share and discuss with the others
+
+Follow these simple steps to configure Log4j to use GMail.
+
 
 Step 1: Add dependencies
 
