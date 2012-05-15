@@ -39,6 +39,7 @@ Step 2: Sample logging file, inline comments are self explanatory
     <?xml version="1.0" encoding="UTF-8" ?>
     <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
     <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+        
         <!-- Appends events to console : compliments SMTPAppender -->
         <appender name="Console" class="org.apache.log4j.ConsoleAppender">
             <layout class="org.apache.log4j.PatternLayout">
@@ -46,10 +47,11 @@ Step 2: Sample logging file, inline comments are self explanatory
             </layout>
         </appender>
 
-        <!-- Only sends error events -->
+        <!-- SMTP will only log error events -->
         <appender name="Email" class="org.apache.log4j.net.SMTPAppender">
             <param name="BufferSize" value="1" /> <!-- default is 512, changed for test cases to work -->
-            <param name="SMTPProtocol" value="smtps" /> <!-- GMail will not work without this, log4j 1.2.16 is required -->
+            <!-- GMail will not work without this, log4j 1.2.16 is required this why earlier versions required hack-->
+            <param name="SMTPProtocol" value="smtps" /> 
             <param name="SMTPHost" value="smtp.gmail.com" />
             <param name="SMTPPort" value="465" />
             <param name="SMTPUsername" value="<email>" /> <!-- example@gmail.com -->
