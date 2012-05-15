@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <!-- Appends events to console : compliments SMTPAppender -->
+    <appender name="Console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[${name}] - %d{ISO8601} - %X{login} - %m%n" />
+        </layout>
+    </appender>
+    
+    <!-- will only sends error events -->
+    <appender name="Email" class="org.apache.log4j.net.SMTPAppender">
+        <param name="BufferSize" value="1" /> <!-- default is 512, changed for test cases to work -->
+        <param name="SMTPProtocol" value="smtps" /> <!-- GMail will not work without this, log4j 1.2.16 is required -->
+        <param name="SMTPHost" value="smtp.gmail.com" />
+        <param name="SMTPPort" value="465" />
+        <param name="SMTPUsername" value="team@zytoon.me" /> <!-- example@gmail.com -->
+        <param name="SMTPPassword" value="Teamu123$" /> <!-- passowrd -->
+        <!-- <param name="From" value="team@zytoon.me" /> -->
+        <param name="To" value="mdshannan@gmail.com" />
+        <param name="Subject" value="Zytoon.me Error Log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[${name}] - %d{ISO8601} - %X{login} - %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="EMAIL_ASYNC" class="org.apache.log4j.AsyncAppender">
+        <param name="BufferSize" value="1"/>
+        <appender-ref ref="Email"/>
+    </appender>
+    
+    <root>
+        <priority value="trace" />
+        <appender-ref ref="Email" />
+        <appender-ref ref="Console" />
+    </root>
+    
+</log4j:configuration>
